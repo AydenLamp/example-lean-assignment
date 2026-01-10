@@ -1,0 +1,32 @@
+{
+  // The display name shown in VS Code's Dev Containers UI
+  "name": "Lean4 container",
+
+  // Tells VS Code to build the dev container using the Dockerfile below
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  // Use the non-root "vscode" user so files created in your repo
+  // don't end up owned by root on your host machine
+  "remoteUser": "vscode",
+
+  // Runs once after the container is created and the workspace is mounted:
+  // - `lake update` fetches/pins dependencies (including mathlib)
+  // - `lake exe cache get!` downloads precompiled oleans (mathlib cache)
+  "postCreateCommand": "lake update && lake exe cache get!",
+
+  // VS Code-side customizations: install the Lean 4 extension
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "leanprover.lean4"
+      ]
+    }
+  },
+
+  // Hint to Codespaces / Dev Container tooling about desired host resources
+  "hostRequirements": {
+    "cpus": 4
+  }
+}
