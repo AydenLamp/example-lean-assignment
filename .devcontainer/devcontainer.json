@@ -13,8 +13,7 @@
 
   // Runs once after the container is created and the workspace is mounted:
   // - `lake update` fetches/pins dependencies (including mathlib)
-  // - `lake exe cache get!` downloads precompiled oleans (mathlib cache)
-  "postCreateCommand": "lake update && lake exe cache get!",
+  "postCreateCommand": "lake update",
 
   // VS Code-side customizations: install the Lean 4 extension
   "customizations": {
