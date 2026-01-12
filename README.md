@@ -1,60 +1,86 @@
 # Lean 4 Homework Assignment
 
-This repo contains a "Dev Container", which is like a lightweight virtual machine that comes pre-installed with Lean 4. This allows you to code in this repo without installing Lean yourself.
-Below are instructions for using this dev container.
+You have two ways to work on this assignment:
+
+1. **Install Lean on your own machine** (no containers)
+2. **Use the provided Dev Container** (Lean is preinstalled inside a container)
 
 ---
 
-## Prerequisites
+## Option 1: Install Lean on your own machine (no container)
 
-Before you begin, install the following on your computer:
+### What you need
+- **Visual Studio Code (VS Code)**: https://code.visualstudio.com
+- **Lean 4 VS Code extension** (`leanprover.lean4`)
 
-1. **Docker Desktop**  
-   Docker is software that runs containers. You do not need to understand Docker deeply; just have it installed and running.  
-   Download and install from [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)  
-   *(Make sure Docker is running before proceeding.)*
+### Install steps
+1. **Install VS Code** (if you don’t already have it).
+  
+2. **Install the Lean 4 extension**
+   - Open VS Code → Extensions (left sidebar) → search **“Lean 4”** → install **Lean 4 (leanprover.lean4)**.
+3. **Install Lean**
+   - After installing the Lean 4 extension, VS Code will guide you through the remaining setup (it may prompt you to install tools like `elan` and download a Lean toolchain).
+   - Official installer instructions: https://lean-lang.org/install
 
-2. **Visual Studio Code (VS Code)**  
-   Download and install from [https://code.visualstudio.com](https://code.visualstudio.com)
-
-3. **Dev Containers Extension for VS Code**  
-   Open VS Code, go to the Extensions view (on the left-side panel), search for **Dev Containers** by Microsoft, and install it.
-
----
-
-## Getting Started
-
-Follow these steps to open the assignment:
-
+### Open the assignment
 1. **Clone this repository**  
    Open a terminal and run:
    ```bash
    git clone https://github.com/AydenLamp/example-lean-assignment.git
    ```
 
-2. **Open the folder in VS Code**  
+2. **Open it in VS Code**
    ```bash
    code example-lean-assignment
    ```
-   Or open VS Code and use **File → Open Folder**.
 
-3. **Reopen in Container**  
-   When VS Code detects the `.devcontainer` folder, you'll see a prompt:  
-   > "Folder contains a Dev Container configuration file. Reopen folder to develop in a container?"
+3. **Start coding**
+   - Open `HomeworkExample/Basic.lean`.
+   - Wait for the file to finish processing (the orange line in the left gutter should dissapear).
+   - If the Lean Infoview panel is not open, click the **∀** icon and choose **Infoview: Toggle**.
 
-   Click **Reopen in Container**.
+> **Note:** The first time you open `Basic.lean`, you may see an error on the `import` line. If this happens, click **Restart File** in the Infoview.
 
-   *(If you miss the prompt, click the blue button in the bottom-left corner of the screen, then select **Reopen in Container**.)*
+---
 
-4. **Wait for the container to build**  
-   The first time, Docker will download and build the container image. This may take 5 to 10 minutes. Subsequent opens will be much faster since you will not have to rebuild the container.
+## Option 2: Use the Dev Container (Lean preinstalled)
 
-5. **Start coding!**  
-   Once the container is ready, you'll have:
-   - Lean 4 and Elan (the Lean version manager) pre-installed
-   - The **Lean 4 VS Code extension** automatically installed
-   - All dependencies (including Mathlib) fetched and cached
+A **Dev Container** is like a lightweight VM that VS Code can connect to. This repo includes one that already has Lean (and dependencies) installed, so you don’t need to install Lean locally.
 
-   Open the `Basic.lean` file in the `HomeworkExample/` folder to begin. Wait for the yellow bar on the left side to go away (this signals that the file is processing). If the Lean 4 Infoview panel is not already open, click the ∀ icon at the top of your screen and select **Infoview: Toggle**.
+### Prerequisites
+1. **Docker Desktop**
+   - https://www.docker.com/products/docker-desktop  
+   Docker runs the container. You don't need to understand exactly how it works; just install it and *make sure it is running before proceeding*.
 
-   > **Note:** The first time you open the container, you may see an error on the `import` statement in `Basic.lean`. To resolve this, click the blue **Restart File** button at the bottom of the Infoview panel.
+2. **Visual Studio Code (VS Code)**
+   - https://code.visualstudio.com
+
+3. **Dev Containers extension for VS Code**
+   - In VS Code → Extensions (on the left hand side) → search **“Dev Containers”** (by Microsoft) → install it.
+
+### Getting started (Dev Container)
+1. **Clone this repository**  
+   Open a terminal and run:
+   ```bash
+   git clone https://github.com/AydenLamp/example-lean-assignment.git
+   ```
+
+2. **Open the folder in VS Code**
+   ```bash
+   code example-lean-assignment  
+   ```
+   Or use **File → Open Folder**.
+
+3. **Reopen in Container**
+   - When VS Code detects the `.devcontainer` folder, it should prompt:  
+     > “Folder contains a Dev Container configuration file. Reopen folder to develop in a container?”
+   - Click **Reopen in Container**.
+   - If you miss the prompt: click the blue button in the bottom-left corner → **Reopen in Container**.
+   - Wait 5-10 min for the container to build. You will not have to rebuild the container in the future, so re-entering the container will be much faster.
+
+4. **Start coding**
+   - Open `HomeworkExample/Basic.lean`.
+   - Wait for the file to finish processing.
+   - If the Lean Infoview panel is not open, click the **∀** icon and choose **Infoview: Toggle**.
+
+> **Note:** The first time you open the container, you may see an error on the `import` statement in `Basic.lean`. To resolve this, click the blue **Restart File** button at the bottom of the Infoview panel.

@@ -10,3 +10,5 @@ theorem sub_le_pow_two_eq (h : m ≤ n) : (n - m) ^ 2 = n ^ 2 + m ^ 2 - 2 * n * 
   ring_nf
   rw [add_comm (k * m * 2)]
   simp [add_assoc]
+
+example (a b : ℝ) : a - b = -b + a := by exact sub_eq_neg_add a b
