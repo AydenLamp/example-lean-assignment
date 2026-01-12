@@ -47,7 +47,7 @@ Follow these steps to open the assignment:
    *(If you miss the prompt, click the blue button in the bottom-left corner of the screen, then select **Reopen in Container**.)*
 
 4. **Wait for the container to build**  
-   The first time, Docker will download and build the container image. This may take about 10 minutes. Subsequent opens will be much faster since you will not have to rebuild the container.
+   The first time, Docker will download and build the container image. This may take 5 to 10 minutes. Subsequent opens will be much faster since you will not have to rebuild the container.
 
 5. **Start coding!**  
    Once the container is ready, you'll have:
@@ -55,6 +55,6 @@ Follow these steps to open the assignment:
    - The **Lean 4 VS Code extension** automatically installed
    - All dependencies (including Mathlib) fetched and cached
 
-   Open the `Basic.lean` file in the `HomeworkExample/` folder to begin. If the Lean 4 Infoview panel is not already open, click the ∀ icon at the top of your screen and select **Infoview: Toggle**.
+   Open the `Basic.lean` file in the `HomeworkExample/` folder to begin. Wait for the yellow bar on the left side to go away (this signals that the file is processing). If the Lean 4 Infoview panel is not already open, click the ∀ icon at the top of your screen and select **Infoview: Toggle**.
 
    > **Note:** The first time you open the container, you may see an error on the `import` statement in `Basic.lean`. To resolve this, click the blue **Restart File** button at the bottom of the Infoview panel.
